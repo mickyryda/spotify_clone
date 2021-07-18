@@ -57,15 +57,9 @@ function App() {
           playlists,
         });
       });
-      s.getMyDevices().then(({devices})=>{
-        console.log("Benim cihazlarım",devices[0].id)
-        dispatch({
-          type:"SET_DEVICE",
-          device_id:devices[0]?.id
-        })
-      })
     }
   }, [token, dispatch]);
+
   return (
     <div className="app">
       {!token && <Login />}
